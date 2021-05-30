@@ -34,11 +34,11 @@ public class Input {
     public void setEuroExchange(){
         Scanner input = new Scanner(System.in);
            do {
-            System.out.println("What is the exchange rate ? ");
+            System.out.println("Enter the exchange rate for dollars equal to one euro.");
             while (!input.hasNextDouble()) {
                 String str1 = input.next();
                 System.out.println(str1 + " is not a valid rate.");
-                System.out.println("What is the exchange rate ? ");
+                System.out.println("Enter the exchange rate for dollars equal to one euro.");
             }
             inputExchange = input.nextDouble();
             if (inputExchange < 0) {
@@ -55,9 +55,9 @@ public class Input {
        euroExRate = euroExRate.setScale(2, RoundingMode.UP);
        dollars = dollars.setScale(2, RoundingMode.UP);
 
-        System.out.println("You are exchanging "+euros+" euros.");
-        System.out.println("The exchange rate is "+euroExRate+" .");
-        System.out.println(euros+" euros at an exchange rate of "+euroExRate+" is\n"+dollars+" dollars.");
+        System.out.print("You are exchanging "+euros+" euros.\n" +
+                "The exchange rate is "+euroExRate+" dollars to 1.00 euro.\n" +
+                euros +" euros at an exchange rate of "+euroExRate+" is\n"+dollars+" dollars.\n");
 
     }
 
