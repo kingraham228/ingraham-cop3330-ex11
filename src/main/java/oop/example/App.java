@@ -8,6 +8,6 @@ public class App
         Input userInput = new Input();
         userInput.setEuros();
         userInput.setEuroExchange();
-        userInput.printInputs();
+        userInput.calcExchange();
     }
 }

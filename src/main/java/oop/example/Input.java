@@ -9,6 +9,8 @@ public class Input {
     double inputExchange;
     BigDecimal euros;
     BigDecimal euroExRate;
+    BigDecimal dollars;
+
 
    public void setEuros(){
        Scanner input = new Scanner(System.in);
@@ -32,11 +34,11 @@ public class Input {
     public void setEuroExchange(){
         Scanner input = new Scanner(System.in);
            do {
-            System.out.println("What is the exchange rate? ");
+            System.out.println("What is the exchange rate ? ");
             while (!input.hasNextDouble()) {
                 String str1 = input.next();
                 System.out.println(str1 + " is not a valid rate.");
-                System.out.println("What is the exchange rate? ");
+                System.out.println("What is the exchange rate ? ");
             }
             inputExchange = input.nextDouble();
             if (inputExchange < 0) {
@@ -46,12 +48,19 @@ public class Input {
         euroExRate = BigDecimal.valueOf(inputExchange);
     }
 
-    public void printInputs(){
+    public void calcExchange(){
+       dollars = euros.multiply(euroExRate);
+
        euros = euros.setScale(2, RoundingMode.UP);
        euroExRate = euroExRate.setScale(2, RoundingMode.UP);
+       dollars = dollars.setScale(2, RoundingMode.UP);
+
         System.out.println("You are exchanging "+euros+" euros.");
         System.out.println("The exchange rate is "+euroExRate+" .");
+        System.out.println(euros+" euros at an exchange rate of "+euroExRate+" is\n"+dollars+" dollars.");
 
     }
+
+
 
 }
