@@ -1,5 +1,8 @@
 package oop.example;
-
+/*
+ *  UCF COP3330 Summer 2021 Assignment 1 Solution
+ *  Copyright 2021 Kate Ingraham
+ */
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Scanner;
@@ -52,7 +55,7 @@ public class Input {
        dollars = euros.multiply(euroExRate);
 
        euros = euros.setScale(2, RoundingMode.UP);
-       euroExRate = euroExRate.setScale(2, RoundingMode.UP);
+       euroExRate = euroExRate.setScale(4, RoundingMode.UP);
        dollars = dollars.setScale(2, RoundingMode.UP);
 
         System.out.print("You are exchanging "+euros+" euros.\n" +
